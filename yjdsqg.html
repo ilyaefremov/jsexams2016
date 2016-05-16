@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML/>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>pocitani</title>
+<script> 
+function sum(){
+var inputs = document.getElementsByTagName('input');
+var result = 0;
+var ifs = 0;
+
+if (document.getElementById('tovar0').checked)
+ifs+=parseInt(document.getElementById('tovar0').value)
+
+if (document.getElementById('tovar1').checked)
+ifs+=parseInt(document.getElementById('tovar1').value);
+
+result = ((parseInt(inputs.item('nalog').value) + parseInt(inputs.item('a').value) - parseInt(inputs.item('d').value) + parseInt(inputs.item('g').value)) * (parseInt(inputs.item('b').value)/100)) + ifs;
+
+inputs.item('result').value = result;
+}
+
+</script>
+
+</head>
+<body bgcolor="D6D6D6" text="#000000">
+
+<h1> Vypocet </h1>
+
+<form name="form">
+Dan celkova: <input name="nalog"/>Euro <p>
+Popisna: <input name="a" />Euro<br/>
+Odecna: <input name="d"/ >Euro<br/>
+Deti: <input name="g" />Euro <br/>
+Procent: <input name="b"/> % <br/>
+Vysledek: <input name="result" /> Euro <br/>
+
+<input type="checkbox" id="tovar0" value="24840"/>Manzele<BR>
+<input type="checkbox" id="tovar1" value="4020"/>Studium<BR>
+
+<input type="button" onClick="sum()" value="Odeslat"/><hr>
+<INPUT type="reset" value="Storno/">
+</form>
+</body>
+</html>
